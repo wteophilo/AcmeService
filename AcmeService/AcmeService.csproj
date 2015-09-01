@@ -70,23 +70,43 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CursoService.svc" />
     <Content Include="EstudanteService.svc" />
+    <Content Include="InscricaoService.svc" />
+    <Content Include="ProfessorService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CursoService.svc.cs">
+      <DependentUpon>CursoService.svc</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AppDBContext.cs" />
     <Compile Include="EstudanteService.svc.cs">
       <DependentUpon>EstudanteService.svc</DependentUpon>
     </Compile>
+    <Compile Include="ICursoService.cs" />
     <Compile Include="IEstudanteService.cs" />
+    <Compile Include="IInscricaoService.cs" />
+    <Compile Include="InscricaoService.svc.cs">
+      <DependentUpon>InscricaoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IProfessorService.cs" />
+    <Compile Include="Migrations\201509011646435_Add teste.cs" />
+    <Compile Include="Migrations\201509011646435_Add teste.Designer.cs">
+      <DependentUpon>201509011646435_Add teste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Curso.cs" />
     <Compile Include="Model\Estudante.cs" />
     <Compile Include="Model\Inscricao.cs" />
     <Compile Include="Model\Professor.cs" />
     <Compile Include="Model\ProfessorCurso.cs" />
+    <Compile Include="Model\Teste.cs" />
+    <Compile Include="ProfessorService.svc.cs">
+      <DependentUpon>ProfessorService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509011646435_Add teste.resx">
+      <DependentUpon>201509011646435_Add teste.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
