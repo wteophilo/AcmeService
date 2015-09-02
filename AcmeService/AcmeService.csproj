@@ -73,6 +73,7 @@
     <Content Include="CursoService.svc" />
     <Content Include="EstudanteService.svc" />
     <Content Include="InscricaoService.svc" />
+    <Content Include="ProfessorCursoService.svc" />
     <Content Include="ProfessorService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -92,6 +93,7 @@
     <Compile Include="InscricaoService.svc.cs">
       <DependentUpon>InscricaoService.svc</DependentUpon>
     </Compile>
+    <Compile Include="IProfessorCursoService.cs" />
     <Compile Include="IProfessorService.cs" />
     <Compile Include="Migrations\201509011646435_Add teste.cs" />
     <Compile Include="Migrations\201509011646435_Add teste.Designer.cs">
@@ -104,6 +106,9 @@
     <Compile Include="Model\Professor.cs" />
     <Compile Include="Model\ProfessorCurso.cs" />
     <Compile Include="Model\Teste.cs" />
+    <Compile Include="ProfessorCursoService.svc.cs">
+      <DependentUpon>ProfessorCursoService.svc</DependentUpon>
+    </Compile>
     <Compile Include="ProfessorService.svc.cs">
       <DependentUpon>ProfessorService.svc</DependentUpon>
     </Compile>
