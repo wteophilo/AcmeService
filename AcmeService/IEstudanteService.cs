@@ -19,10 +19,10 @@ namespace AcmeService
         [OperationContract]
         void atualiza(Estudante estudante);
         [OperationContract]
-        Estudante procura(int? idestudante);
+        Estudante procura(int? id);
         [OperationContract]
-        ICollection<Estudante> listaEstudante();
+        ICollection<Estudante> lista();
         [OperationContract]
-        Estudante detalhe(int? idEstudante);
+        Estudante detalhe(int? id);
     }
 }

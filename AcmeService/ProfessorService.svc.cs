@@ -46,6 +46,7 @@ namespace AcmeService
 
         public void remove(Professor professor)
         {
+            db.Professores.Attach(professor);
             db.Professores.Remove(professor);
             db.SaveChanges();
         }

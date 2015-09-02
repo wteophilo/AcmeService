@@ -16,26 +16,9 @@ namespace AcmeService
     {
         private AppDBContext db = new AppDBContext();
 
-
         public void adiciona(Estudante estudante)
         {
             db.Estudantes.Add(estudante);
-            db.SaveChanges();
-        }
-
-        public Estudante find(Estudante estudante)
-        {
-            return db.Estudantes.Find(estudante);
-        }
-
-        public ICollection<Estudante> listaEstudante()
-        {
-            return db.Estudantes.ToList();
-        }
-
-        public void remove(Estudante estudante)
-        {
-            db.Estudantes.Remove(estudante);
             db.SaveChanges();
         }
 
@@ -45,16 +28,27 @@ namespace AcmeService
             db.SaveChanges();
         }
 
-        public Estudante procura(int? idestudante)
+        public Estudante detalhe(int? id)
         {
-            return db.Estudantes.Find(idestudante);
+            Estudante estudante = db.Estudantes.Include(i => i.inscricoes).SingleOrDefault(x => x.id == id);
+            return estudante;
         }
 
-       
-        Estudante IEstudanteService.detalhe(int? idEstudante)
+        public ICollection<Estudante> lista()
         {
-            Estudante estudante = db.Estudantes.Include(i => i.inscricoes).SingleOrDefault(x => x.id == idEstudante);
-            return estudante;
+            return db.Estudantes.ToList();
+        }
+
+        public Estudante procura(int? id)
+        {
+            return db.Estudantes.Find(id);
+        }
+
+        public void remove(Estudante estudante)
+        {
+            db.Estudantes.Attach(estudante);
+            db.Estudantes.Remove(estudante);
+            db.SaveChanges();
         }
     }
 }
